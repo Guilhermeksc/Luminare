@@ -1,0 +1,14 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1200" fill="#1C3827"/>
+  <g opacity="0.8" filter="url(#filter0_f_1_1)">
+    <circle cx="400" cy="320" r="220" fill="#2F6C44"/>
+    <circle cx="1240" cy="440" r="260" fill="#244C32"/>
+    <circle cx="880" cy="760" r="280" fill="#173321"/>
+  </g>
+  <path d="M200 900C360 820 400 760 560 800C720 840 820 640 980 640C1140 640 1240 840 1360 900" stroke="#D4AF37" stroke-width="8" stroke-linecap="round" stroke-dasharray="32 24" opacity="0.4"/>
+  <defs>
+    <filter id="filter0_f_1_1" x="0" y="0" width="1600" height="1200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+  </defs>
+</svg>
