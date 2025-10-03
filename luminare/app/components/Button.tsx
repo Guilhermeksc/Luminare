@@ -1,12 +1,8 @@
 "use client";
 
 import Link, { LinkProps } from "next/link";
-import { motion } from "framer-motion";
-import {
-  type ComponentPropsWithoutRef,
-  type ReactElement,
-  type ReactNode,
-} from "react";
+import { motion, type HTMLMotionProps } from "framer-motion";
+import { type ReactElement, type ReactNode } from "react";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
 
@@ -18,13 +14,16 @@ type BaseProps = {
   iconPosition?: "left" | "right";
 };
 
+type AnchorMotionProps = Omit<HTMLMotionProps<"a">, "href">;
+
 type AnchorProps = BaseProps &
-  LinkProps & {
+  LinkProps &
+  AnchorMotionProps & {
     asChild?: false;
   };
 
 type ButtonProps = BaseProps &
-  ComponentPropsWithoutRef<"button"> & {
+  HTMLMotionProps<"button"> & {
     as?: "button";
   };
 
@@ -39,6 +38,10 @@ const styles: Record<ButtonVariant, string> = {
 
 function composeClassNames(...parts: Array<string | undefined>) {
   return parts.filter(Boolean).join(" ");
+}
+
+function isAnchorProps(props: AnchorProps | ButtonProps): props is AnchorProps {
+  return "href" in props;
 }
 
 const MotionLink = motion(Link);
@@ -70,7 +73,7 @@ export function Button({
     </>
   );
 
-  if ("href" in rest) {
+  if (isAnchorProps(rest)) {
     const { href, ...linkProps } = rest;
     return (
       <MotionLink
@@ -87,7 +90,7 @@ export function Button({
 
   return (
     <MotionButton
-      {...(rest as ComponentPropsWithoutRef<"button">)}
+      {...rest}
       className={baseClasses}
       whileHover={{ y: -2 }}
       whileTap={{ scale: 0.97 }}
