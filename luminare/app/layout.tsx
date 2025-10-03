@@ -15,22 +15,24 @@ const lustria = Lustria({
   display: "swap",
 });
 
+const baseUrl = "https://luminarepromove.com.br";
+const ogImageUrl = `${baseUrl}/images/logo.png`;
 const title = "Luminare Promove | Produções e Eventos";
 const description =
   "Produção de eventos sustentáveis, inovadores e sofisticados para experiências culturais, corporativas e imersivas com impacto positivo.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://luminarepromove.com.br"),
+  metadataBase: new URL(baseUrl),
   title,
   description,
   openGraph: {
     title,
     description,
-    url: "/",
+    url: baseUrl,
     siteName: "Luminare Promove",
     images: [
       {
-        url: "/images/logo.png",
+        url: ogImageUrl,
         width: 250,
         height: 250,
         alt: "Logo Luminare",
@@ -41,10 +43,10 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title,
     description,
-    images: ["/images/logo.png"],
+    images: [ogImageUrl],
   },
   keywords: [
     "eventos sustentáveis",
@@ -54,7 +56,7 @@ export const metadata: Metadata = {
     "Luminare Produções e Eventos",
   ],
   alternates: {
-    canonical: "/",
+    canonical: baseUrl,
   },
 };
 
