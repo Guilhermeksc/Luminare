@@ -4,22 +4,22 @@ import { Button } from "./Button";
 const socialLinks = [
   {
     label: "Instagram",
-    href: "https://instagram.com",
+    href: "https://instagram.com/luminarepromove",
     icon: Instagram,
   },
   {
     label: "YouTube",
-    href: "https://youtube.com",
+    href: "https://youtube.com/@luminarepromove", // ajuste se o canal tiver @
     icon: Youtube,
   },
   {
     label: "WhatsApp",
-    href: "https://wa.me/5500000000000",
+    href: "https://wa.me/5561999999999", // coloque o número real
     icon: MessageCircle,
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com",
+    href: "https://linkedin.com/company/luminarepromove", // ajuste se já houver página
     icon: Linkedin,
   },
 ];

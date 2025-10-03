@@ -49,14 +49,13 @@ const MotionButton = motion.button;
 
 export function Button(props: AnchorProps): ReactElement;
 export function Button(props: ButtonProps): ReactElement;
-export function Button({
-  children,
-  variant = "primary",
-  className,
-  icon,
-  iconPosition = "right",
-  ...rest
-}: ButtonProps | AnchorProps): ReactElement {
+export function Button(props: ButtonProps | AnchorProps): ReactElement {
+  const variant = props.variant ?? "primary";
+  const className = props.className;
+  const icon = props.icon;
+  const iconPosition = props.iconPosition ?? "right";
+  const children = props.children;
+
   const baseClasses = composeClassNames(
     "inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition duration-200",
     "shadow-sm shadow-black/5",
@@ -73,27 +72,52 @@ export function Button({
     </>
   );
 
-  if (isAnchorProps(rest)) {
-    const { href, ...linkProps } = rest;
+  const hoverMotion = props.whileHover ?? { y: -2 };
+  const tapMotion = props.whileTap ?? { scale: 0.97 };
+
+  if (isAnchorProps(props)) {
+    const {
+      href,
+      children: _children,
+      className: _className,
+      icon: _icon,
+      iconPosition: _iconPosition,
+      variant: _variant,
+      whileHover: _whileHover,
+      whileTap: _whileTap,
+      ...linkProps
+    } = props;
+
     return (
       <MotionLink
         href={href}
         {...linkProps}
         className={baseClasses}
-        whileHover={{ y: -2 }}
-        whileTap={{ scale: 0.97 }}
+        whileHover={hoverMotion}
+        whileTap={tapMotion}
       >
         {content}
       </MotionLink>
     );
   }
 
+  const {
+    children: _children,
+    className: _className,
+    icon: _icon,
+    iconPosition: _iconPosition,
+    variant: _variant,
+    whileHover: _whileHover,
+    whileTap: _whileTap,
+    ...buttonProps
+  } = props;
+
   return (
     <MotionButton
-      {...rest}
+      {...buttonProps}
       className={baseClasses}
-      whileHover={{ y: -2 }}
-      whileTap={{ scale: 0.97 }}
+      whileHover={hoverMotion}
+      whileTap={tapMotion}
     >
       {content}
     </MotionButton>
