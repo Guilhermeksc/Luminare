@@ -45,7 +45,7 @@ export function Footer() {
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
           <div className="space-y-2">
             <p className="text-sm text-[color:var(--color-muted)]">
-              Conecte-se com a Luminare e acompanhe nossos bastidores.
+              Conecte-se com a Luminare.
             </p>
             <p className="text-xs text-[color:var(--color-muted)]">
               © {new Date().getFullYear()} Luminare Produções e Eventos. Todos os direitos reservados.

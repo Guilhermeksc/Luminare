@@ -8,23 +8,23 @@ import { SectionHeading } from "../components/SectionHeading";
 
 const upcomingEvents = [
   {
-    name: "Eco Innovation Summit",
-    date: "18 · Abril · 2025",
-    location: "São Paulo · SP",
+    name: "Evento 1",
+    date: "11 · Outubro · 2025",
+    location: "João Pessoa · PB",
     href: "#",
     description: "Hub de inovação para marcas de impacto positivo, com arenas imersivas e energia limpa.",
   },
   {
-    name: "Green Experience Week",
-    date: "06 · Junho · 2025",
-    location: "Florianópolis · SC",
+    name: "Evento 2",
+    date: "30 de outubro à 01 de novembro · 2025",
+    location: "João Pessoa · PB",
     href: "#",
     description: "Festival de cultura regenerativa, laboratórios criativos e painéis colaborativos.",
   },
   {
-    name: "Corporate Circular Forum",
-    date: "28 · Agosto · 2025",
-    location: "Brasília · DF",
+    name: "Evento 3",
+    date: "10 · Dezembro · 2025",
+    location: "João Pessoa · PB",
     href: "#",
     description: "Encontro estratégico para líderes ESG com workshops e cases de circularidade.",
   },

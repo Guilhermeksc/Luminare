@@ -40,21 +40,22 @@ function composeClassNames(...parts: Array<string | undefined>) {
   return parts.filter(Boolean).join(" ");
 }
 
-function isAnchorProps(props: AnchorProps | ButtonProps): props is AnchorProps {
-  return "href" in props;
-}
-
 const MotionLink = motion(Link);
 const MotionButton = motion.button;
 
 export function Button(props: AnchorProps): ReactElement;
 export function Button(props: ButtonProps): ReactElement;
 export function Button(props: ButtonProps | AnchorProps): ReactElement {
-  const variant = props.variant ?? "primary";
-  const className = props.className;
-  const icon = props.icon;
-  const iconPosition = props.iconPosition ?? "right";
-  const children = props.children;
+  const {
+    children,
+    variant = "primary",
+    className,
+    icon,
+    iconPosition = "right",
+    whileHover,
+    whileTap,
+    ...rest
+  } = props;
 
   const baseClasses = composeClassNames(
     "inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition duration-200",
@@ -72,21 +73,13 @@ export function Button(props: ButtonProps | AnchorProps): ReactElement {
     </>
   );
 
-  const hoverMotion = props.whileHover ?? { y: -2 };
-  const tapMotion = props.whileTap ?? { scale: 0.97 };
+  const hoverMotion = whileHover ?? { y: -2 };
+  const tapMotion = whileTap ?? { scale: 0.97 };
 
-  if (isAnchorProps(props)) {
-    const {
-      href,
-      children: _children,
-      className: _className,
-      icon: _icon,
-      iconPosition: _iconPosition,
-      variant: _variant,
-      whileHover: _whileHover,
-      whileTap: _whileTap,
-      ...linkProps
-    } = props;
+  if ("href" in rest) {
+    const { href, ...linkProps } = rest as AnchorMotionProps & LinkProps & {
+      asChild?: false;
+    };
 
     return (
       <MotionLink
@@ -101,20 +94,9 @@ export function Button(props: ButtonProps | AnchorProps): ReactElement {
     );
   }
 
-  const {
-    children: _children,
-    className: _className,
-    icon: _icon,
-    iconPosition: _iconPosition,
-    variant: _variant,
-    whileHover: _whileHover,
-    whileTap: _whileTap,
-    ...buttonProps
-  } = props;
-
   return (
     <MotionButton
-      {...buttonProps}
+      {...(rest as HTMLMotionProps<"button">)}
       className={baseClasses}
       whileHover={hoverMotion}
       whileTap={tapMotion}

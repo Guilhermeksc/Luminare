@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "./Button";
@@ -44,8 +45,15 @@ export function Navbar() {
         }`}
       >
         <a href="#hero" className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[color:var(--color-primary)] text-xl font-bold text-white shadow-emerald">
-            L
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl">
+            <Image
+              src="/images/logo.png"
+              alt="Luminare"
+              width={44}
+              height={44}
+              className="h-full w-full object-contain"
+              priority
+            />
           </div>
           <div className="leading-snug">
             <p className="text-base font-semibold tracking-wide text-[color:var(--color-foreground)]">

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Handshake, Leaf, Lightbulb, Workflow } from "lucide-react";
 import { SectionHeading } from "../components/SectionHeading";
@@ -35,6 +36,16 @@ const values = [
 export function Conheca() {
   return (
     <section id="conheca" className="container-section py-24">
+      <div className="mb-8 flex justify-center lg:mb-14">
+        <Image
+          src="/images/logo_maior.svg"
+          alt="Luminare logo"
+          width={260}
+          height={84}
+          className="h-auto w-[220px] drop-shadow-[0_8px_24px_rgba(0,0,0,0.35)] sm:w-[260px]"
+          priority
+        />
+      </div>
       <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

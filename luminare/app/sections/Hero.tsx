@@ -3,12 +3,13 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "../components/Button";
+import { Dancing_Script } from "next/font/google";
 
-const stats = [
-  { label: "Eventos carbono neutro", value: "+120" },
-  { label: "Parceiros sustentáveis", value: "80" },
-  { label: "Índice de satisfação", value: "98%" },
-];
+const highlightScript = Dancing_Script({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+});
 
 export function Hero() {
   return (
@@ -52,23 +53,6 @@ export function Hero() {
               Conheça a Luminare
             </Button>
           </div>
-          <dl className="grid gap-6 pt-6 sm:grid-cols-3">
-            {stats.map((item) => (
-              <motion.div
-                key={item.label}
-                className="rounded-3xl border border-white/15 bg-white/5 p-5 backdrop-blur"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.5 }}
-              >
-                <dt className="text-xs uppercase tracking-[0.32em] text-white/60">
-                  {item.label}
-                </dt>
-                <dd className="mt-2 text-2xl font-semibold text-white">{item.value}</dd>
-              </motion.div>
-            ))}
-          </dl>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -100,6 +84,74 @@ export function Hero() {
           </div>
         </motion.div>
       </div>
+      <div className="container-section relative z-10 mt-16">
+        <div className="h-px w-full bg-white/20" />
+      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.4 }}
+        className="container-section relative z-10 mt-10"
+      >
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 rounded-[32px] p-10 text-white">
+          <div className="flex w-full items-center justify-center">
+            <Image
+              src="/images/dia_verde.png"
+              alt="Dia Verde"
+              width={500}
+              height={500}
+              className="h-auto w-full max-w-[500px] object-contain"
+              priority
+            />
+          </div>
+          <div className="flex w-full max-w-[520px] flex-col items-center gap-6 text-center">
+            <p className={`${highlightScript.className} text-3xl font-semibold text-[#7fe9ac]`}>
+              Inovação e Soluções Urbanas Sustentáveis
+            </p>
+            <div className="flex flex-col items-center gap-3 text-center">
+              <p className="rounded-full px-5 py-2 text-sm font-semibold uppercase tracking-[0.3em] text-[#7fe9ac] shadow-sm shadow-[#7fe9ac]/30">
+                30, 31 de outubro e 01 de novembro
+              </p>
+              <p className="text-xs uppercase tracking-[0.28em] text-white/70">
+                na Semana Nacional de Ciência e Tecnologia
+              </p>
+            </div>
+            <p className="text-sm text-white/80">Local: Espaço Cultural</p>
+            <div className="flex w-full max-w-[500px] items-center justify-center p-4">
+              <Image
+                src="/images/patrocinadores.png"
+                alt="Patrocinadores"
+                width={1000}
+                height={320}
+                className="h-auto w-full max-w-[500px] object-contain"
+              />
+            </div>
+          </div>
+          <div className="w-full max-w-[520px] space-y-6 text-center">
+            <div className="space-y-1 text-lg font-semibold">
+              <p className="text-[color:var(--color-accent)]">30 e 31 OUTUBRO (14 às 19h)</p>
+              <p className="text-white/85">Quinta e Sexta</p>
+            </div>
+            <div className="space-y-2 text-base text-white/85">
+              <p>VITRINE de Soluções Urbanas Sustentáveis</p>
+              <p>ESPAÇO APRENDIZ para compartilhamentos</p>
+              <p>RODAS de diálogos em Soluções Urbanas Sustentáveis</p>
+            </div>
+            <div className="space-y-1 text-lg font-semibold">
+              <p className="text-[color:var(--color-accent)]">01 DE NOVEMBRO (14 às 18h)</p>
+              <p className="text-white/85">Sábado</p>
+            </div>
+            <div className="space-y-3 text-base text-white/85">
+              <p>Mesa Redonda 1: aproveitamento de resíduos e caminhos sustentáveis para construção civil</p>
+              <p>
+                Mesa Redonda 2: Soluções Baseadas na Natureza (SbN) e engajamento comunitário rumo ao urbanismo
+                sustentável
+              </p>
+            </div>
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 }
