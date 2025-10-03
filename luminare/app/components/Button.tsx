@@ -2,7 +2,11 @@
 
 import Link, { LinkProps } from "next/link";
 import { motion } from "framer-motion";
-import { ComponentPropsWithoutRef, ReactNode } from "react";
+import {
+  type ComponentPropsWithoutRef,
+  type ReactElement,
+  type ReactNode,
+} from "react";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
 
@@ -40,8 +44,8 @@ function composeClassNames(...parts: Array<string | undefined>) {
 const MotionLink = motion(Link);
 const MotionButton = motion.button;
 
-export function Button(props: AnchorProps): JSX.Element;
-export function Button(props: ButtonProps): JSX.Element;
+export function Button(props: AnchorProps): ReactElement;
+export function Button(props: ButtonProps): ReactElement;
 export function Button({
   children,
   variant = "primary",
@@ -49,7 +53,7 @@ export function Button({
   icon,
   iconPosition = "right",
   ...rest
-}: ButtonProps | AnchorProps) {
+}: ButtonProps | AnchorProps): ReactElement {
   const baseClasses = composeClassNames(
     "inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition duration-200",
     "shadow-sm shadow-black/5",
