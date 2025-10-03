@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Lustria, Montserrat } from "next/font/google";
 import "./globals.css";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-primary",
+  display: "swap",
+});
+
+const lustria = Lustria({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-heading",
   display: "swap",
 });
 
@@ -55,8 +62,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="light" suppressHydrationWarning>
-      <body className={`${montserrat.variable} bg-[color:var(--color-background)] text-[color:var(--color-foreground)] antialiased`}>
+    <html lang="pt-BR" className="dark" suppressHydrationWarning>
+      <body
+        className={`${montserrat.variable} ${lustria.variable} bg-[color:var(--color-background)] text-[color:var(--color-foreground)] antialiased`}
+      >
         {children}
       </body>
     </html>

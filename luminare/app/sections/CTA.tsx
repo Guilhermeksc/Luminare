@@ -8,8 +8,8 @@ export function CTA() {
     <section id="contato" className="relative isolate overflow-hidden py-24">
       <div className="absolute inset-0 -z-10 bg-[color:var(--color-primary)]" />
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 opacity-40" style={{ background: "radial-gradient(circle at top left, #d4af37 0%, transparent 55%)" }} />
-        <div className="absolute inset-0 opacity-30" style={{ background: "radial-gradient(circle at bottom right, rgba(12, 23, 18, 0.8) 0%, transparent 65%)" }} />
+        <div className="absolute inset-0 opacity-40" style={{ background: "radial-gradient(circle at top left, #d0ae48 0%, transparent 55%)" }} />
+        <div className="absolute inset-0 opacity-30" style={{ background: "radial-gradient(circle at bottom right, rgba(2, 20, 14, 0.85) 0%, transparent 65%)" }} />
       </div>
       <div className="container-section text-white">
         <motion.div
@@ -24,13 +24,13 @@ export function CTA() {
           <div className="relative z-10 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
             <div className="space-y-6">
               <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[color:var(--color-accent)]">
-                Vamos iluminar seu próximo evento
+                Construa com a Luminare
               </p>
-              <h2 className="text-3xl font-semibold sm:text-4xl">
-                Crie experiências inesquecíveis com impacto positivo e resultados mensuráveis.
+              <h2 className="font-heading text-3xl sm:text-4xl">
+                Transforme seu evento em um marco inesquecível e sustentável.
               </h2>
               <p className="text-base text-white/75">
-                Envie sua ideia e retornamos com uma proposta personalizada, conceitos criativos e projeção de impacto sustentável em até 48 horas.
+                Compartilhe sua ideia para receber um desenho estratégico alinhado ao plano 2024–2031: curadoria criativa, planejamento logístico e indicadores ESG transparentes.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Button href="mailto:contato@luminareeventos.com" variant="primary">
@@ -46,10 +46,10 @@ export function CTA() {
                 O que entregamos
               </p>
               <ul className="mt-5 space-y-3">
-                <li>• Planejamento estratégico alinhado ao branding e ESG</li>
-                <li>• Curadoria de fornecedores certificados e logística limpa</li>
-                <li>• Operação integrada com energia renovável e medição de emissões</li>
-                <li>• Relatório pós-evento com indicadores e storytelling</li>
+                <li>• Planejamento completo com acolhimento e personalização para celebrantes</li>
+                <li>• Curadoria musical e sensorial alinhada ao perfil do público</li>
+                <li>• Rede de fornecedores certificados, logística inteligente e indicadores ESG</li>
+                <li>• Relatórios pós-evento com storytelling, métricas e oportunidades de legado</li>
               </ul>
             </div>
           </div>

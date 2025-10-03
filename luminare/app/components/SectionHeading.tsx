@@ -16,7 +16,7 @@ export function SectionHeading({
       <span className="text-xs font-semibold uppercase tracking-[0.4em] text-[color:var(--color-accent)]">
         {eyebrow}
       </span>
-      <h2 className="text-3xl font-semibold text-[color:var(--color-foreground)] sm:text-4xl">
+      <h2 className="font-heading text-3xl text-[color:var(--color-foreground)] sm:text-4xl">
         {title}
       </h2>
       {description ? (

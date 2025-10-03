@@ -1,6 +1,7 @@
 import { CTA } from "./sections/CTA";
 import { Conheca } from "./sections/Conheca";
 import { EventsCarousel } from "./sections/EventsCarousel";
+import { Manifesto } from "./sections/Manifesto";
 import { FAQ } from "./sections/FAQ";
 import { Features } from "./sections/Features";
 import { Hero } from "./sections/Hero";
@@ -20,6 +21,7 @@ export default function Home() {
         <UpcomingEvents />
         <Features />
         <Testimonials />
+        <Manifesto />
         <FAQ />
         <CTA />
       </main>

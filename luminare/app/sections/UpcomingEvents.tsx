@@ -8,25 +8,28 @@ import { SectionHeading } from "../components/SectionHeading";
 
 const upcomingEvents = [
   {
-    name: "Evento 1",
-    date: "11 · Outubro · 2025",
-    location: "João Pessoa · PB",
-    href: "#",
-    description: "Hub de inovação para marcas de impacto positivo, com arenas imersivas e energia limpa.",
+    name: "Fase 1 · Estruturação",
+    date: "2024 – 2025",
+    location: "Capacitação interna e rede de fornecedores",
+    href: "#contato",
+    description:
+      "Formalização da empresa, aprimoramento administrativo, construção da base logística e realização de eventos piloto na região de João Pessoa-PB.",
   },
   {
-    name: "Evento 2",
-    date: "30 de outubro à 01 de novembro · 2025",
-    location: "João Pessoa · PB",
-    href: "#",
-    description: "Festival de cultura regenerativa, laboratórios criativos e painéis colaborativos.",
+    name: "Fase 2 · Expansão",
+    date: "2026 – 2028",
+    location: "Portfólio autoral e parcerias estratégicas",
+    href: "#contato",
+    description:
+      "Escala de eventos familiares e corporativos, ampliação da inteligência criativa, consolidação da curadoria sensorial e das métricas ESG.",
   },
   {
-    name: "Evento 3",
-    date: "10 · Dezembro · 2025",
-    location: "João Pessoa · PB",
-    href: "#",
-    description: "Encontro estratégico para líderes ESG com workshops e cases de circularidade.",
+    name: "Fase 3 · Consolidação",
+    date: "2029 – 2031",
+    location: "Reconhecimento regional e novos mercados",
+    href: "#contato",
+    description:
+      "Fortalecimento da marca Luminare, expansão para outras capitais e criação de programas de formação para fornecedores comprometidos com sustentabilidade.",
   },
 ];
 
@@ -35,9 +38,9 @@ export function UpcomingEvents() {
     <section className="bg-[color:var(--color-background)] py-24">
       <div className="container-section space-y-12">
         <SectionHeading
-          eyebrow="Próximos eventos"
-          title="Agenda que inspira o futuro dos eventos sustentáveis"
-          description="Cadastre-se para participar, patrocinar ou co-criar experiências que transformam pessoas e negócios."
+          eyebrow="Plano de crescimento"
+          title="Marcos estratégicos da Luminare até 2031"
+          description="Conheça as fases que guiam nosso plano de negócios e descubra como participar como parceiro, fornecedor ou celebrante."
         />
         <div className="grid gap-6 md:grid-cols-3">
           {upcomingEvents.map((event, index) => (
@@ -67,7 +70,7 @@ export function UpcomingEvents() {
                   href={event.href}
                   className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-accent)] transition hover:gap-3"
                 >
-                  Saiba mais
+                  Quero contribuir
                   <ArrowUpRight className="h-4 w-4" strokeWidth={1.6} />
                 </Link>
               </Card>

@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "./Button";
-import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { label: "Início", href: "#hero" },
@@ -56,7 +55,7 @@ export function Navbar() {
             />
           </div>
           <div className="leading-snug">
-            <p className="text-base font-semibold tracking-wide text-[color:var(--color-foreground)]">
+            <p className="font-heading text-lg tracking-wide text-[color:var(--color-accent)]">
               Luminare
             </p>
             <p className="text-xs text-[color:var(--color-muted)]">
@@ -81,7 +80,6 @@ export function Navbar() {
               Solicitar orçamento
             </Button>
           </div>
-          <ThemeToggle />
         </div>
       </div>
     </motion.header>

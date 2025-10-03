@@ -26,15 +26,15 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="mt-24 bg-[color:var(--color-surface)]/70 py-14">
+    <footer className="mt-24 bg-[color:var(--color-primary)]/25 py-14 backdrop-blur">
       <div className="container-section flex flex-col gap-10 text-sm text-[color:var(--color-muted)]">
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-accent)]">
-              Luminare Produções e Eventos
+              Luminare Produção & Eventos · João Pessoa · PB
             </p>
-            <h3 className="mt-3 text-2xl font-semibold text-[color:var(--color-foreground)]">
-              Brilhamos em cada detalhe, com sustentabilidade e sofisticação.
+            <h3 className="font-heading mt-3 text-2xl text-[color:var(--color-foreground)]">
+              Celebramos pessoas com sofisticação, tecnologia e responsabilidade.
             </h3>
           </div>
           <Button href="#contato" variant="primary" className="text-xs uppercase tracking-[0.22em]">
@@ -48,7 +48,7 @@ export function Footer() {
               Conecte-se com a Luminare.
             </p>
             <p className="text-xs text-[color:var(--color-muted)]">
-              © {new Date().getFullYear()} Luminare Produções e Eventos. Todos os direitos reservados.
+              © {new Date().getFullYear()} Luminare Produção & Eventos. Todos os direitos reservados.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-4">
