@@ -16,7 +16,9 @@ const lustria = Lustria({
 });
 
 const baseUrl = "https://luminarepromove.com.br";
-const ogImageUrl = `${baseUrl}/images/logo.png`;
+// imagem otimizada em 1200x630 (recomendado para WhatsApp, FB, Twitter, LinkedIn)
+const ogImageUrl = `${baseUrl}/images/logo-og.jpg`;
+
 const title = "Luminare Promove | Produções e Eventos";
 const description =
   "Produção de eventos sustentáveis, inovadores e sofisticados para experiências culturais, corporativas e imersivas com impacto positivo.";
@@ -33,17 +35,17 @@ export const metadata: Metadata = {
     images: [
       {
         url: ogImageUrl,
-        width: 250,
-        height: 250,
+        width: 1200,
+        height: 630,
         alt: "Logo Luminare",
-        type: "image/png",
+        type: "image/jpeg",
       },
     ],
     locale: "pt_BR",
     type: "website",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image", // garante exibição com imagem grande
     title,
     description,
     images: [ogImageUrl],
