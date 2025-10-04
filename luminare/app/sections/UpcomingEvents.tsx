@@ -35,7 +35,7 @@ const upcomingEvents = [
 
 export function UpcomingEvents() {
   return (
-    <section className="bg-[color:var(--color-background)] py-24">
+    <section className="py-24">
       <div className="container-section space-y-12">
         <SectionHeading
           eyebrow="Plano de crescimento"

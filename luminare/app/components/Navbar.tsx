@@ -7,7 +7,7 @@ import { Button } from "./Button";
 
 const links = [
   { label: "Início", href: "#hero" },
-  { label: "Conheça", href: "#conheca" },
+  { label: "Dia Verde", href: "#conheca" },
   { label: "Eventos", href: "#eventos" },
   { label: "Serviços", href: "#features" },
   { label: "Depoimentos", href: "#testimonials" },

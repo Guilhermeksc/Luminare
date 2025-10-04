@@ -12,14 +12,14 @@ import { Footer } from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-[color:var(--color-background)] text-[color:var(--color-foreground)]">
+    <div className="relative min-h-screen text-[color:var(--color-foreground)]">
       <Navbar />
       <main>
         <Hero />
         <Conheca />
-        <EventsCarousel />
+        {/* <EventsCarousel />
         <UpcomingEvents />
-        <Features />
+        <Features /> */}
         <Testimonials />
         <Manifesto />
         <FAQ />

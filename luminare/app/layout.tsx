@@ -70,7 +70,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="dark" suppressHydrationWarning>
       <body
-        className={`${montserrat.variable} ${lustria.variable} bg-[color:var(--color-background)] text-[color:var(--color-foreground)] antialiased`}
+        className={`${montserrat.variable} ${lustria.variable} text-[color:var(--color-foreground)] antialiased`}
       >
         {children}
       </body>

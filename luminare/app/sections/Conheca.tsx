@@ -2,111 +2,104 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Gem, Handshake, Leaf, Music, Sparkles, Users, Waves } from "lucide-react";
+import { Gem, Handshake, Leaf, MessageCircle, Music, Sparkles, Users, Waves } from "lucide-react";
 import { SectionHeading } from "../components/SectionHeading";
 import { Card } from "../components/Card";
+import { Dancing_Script } from "next/font/google";
 
-const values = [
-  {
-    icon: Users,
-    title: "Pessoas celebram com pessoas",
-    description:
-      "Cada projeto nasce escutando anfitriões e convidados para que o encontro gere bem-estar, vínculos e memórias reais.",
-  },
-  {
-    icon: Handshake,
-    title: "Respeito aos celebrantes",
-    description:
-      "Planejamento colaborativo, protocolos de etiqueta e fluxos sob medida para honrar histórias e expectativas.",
-  },
-  {
-    icon: Sparkles,
-    title: "Modernidade e sofisticação",
-    description:
-      "Tecnologias emergentes, trajes e condutas impecáveis para eventos contemporâneos com assinatura autoral.",
-  },
-  {
-    icon: Gem,
-    title: "Personalização e autenticidade",
-    description:
-      "Narrativas únicas, identidade visual proprietária e storytelling que evidenciam os protagonistas da celebração.",
-  },
-];
+const highlightScript = Dancing_Script({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+});
 
 export function Conheca() {
   return (
     <section id="conheca" className="container-section py-24">
 
       <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.4 }}
-          className="space-y-6"
-        >
-          <SectionHeading
-            eyebrow="Conheça a Luminare"
-            title="Plano 2024–2031 para celebrar com propósito"
-            description="Somos uma produtora nascida em João Pessoa comprometida em unir criatividade, tecnologia e responsabilidade socioambiental. Nosso plano de negócios mapeia metas para os próximos sete anos e prepara a Luminare para entregar experiências memoráveis com eficiência e impacto positivo."
-          />
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-3xl border border-[color:var(--color-accent)]/25 bg-[color:var(--color-surface)]/85 p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[color:var(--color-accent)]">
-                Missão
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.4 }}
+        className="container-section relative z-10 mt-10"
+      >
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 rounded-[32px] p-10 text-white">
+          <div className="flex w-full items-center justify-center">
+            <Image
+              src="/images/dia_verde.png"
+              alt="Dia Verde"
+              width={500}
+              height={500}
+              className="h-auto w-full max-w-[500px] object-contain"
+              priority
+            />
+          </div>
+          <div className="flex w-full max-w-[520px] flex-col items-center gap-6 text-center">
+            <p className={`${highlightScript.className} text-3xl font-semibold text-[#7fe9ac]`}>
+              Inovação e Soluções Urbanas Sustentáveis
+            </p>
+            <div className="flex flex-col items-center gap-3 text-center">
+              <p className="rounded-full px-5 py-2 text-sm font-semibold uppercase tracking-[0.3em] text-[#7fe9ac] shadow-sm shadow-[#7fe9ac]/30">
+                30, 31 de outubro e 01 de novembro
               </p>
-              <p className="mt-3 text-sm text-[color:var(--color-muted)]">
-                Promover eventos que proporcionem experiências agradáveis e memoráveis aos participantes, valorizando pessoas e fortalecendo conexões.
+              <p className="text-xs uppercase tracking-[0.28em] text-white/70">
+                na Semana Nacional de Ciência e Tecnologia
               </p>
             </div>
-            <div className="rounded-3xl border border-[color:var(--color-accent)]/25 bg-[color:var(--color-surface)]/85 p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[color:var(--color-accent)]">
-                Visão
-              </p>
-              <p className="mt-3 text-sm text-[color:var(--color-muted)]">
-                Ser referência em eventos familiares e corporativos, inovadores e acolhedores, com excelência na estrutura, música de qualidade e personalização.
+            <p className="text-sm text-white/80">Local: Espaço Cultural</p>
+            <a
+              href="https://forms.gle/mbA7quzaF9xysJw88"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-2 text-sm font-semibold uppercase tracking-[0.28em] text-white transition hover:border-white/60"
+            >
+              Inscreva-se aqui
+            </a>
+            <a
+              href="https://wa.me/5583999080130"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-2 text-sm font-semibold uppercase tracking-[0.28em] text-white transition hover:border-white/60"
+            >
+              <MessageCircle className="mr-3 h-4 w-4" aria-hidden="true" />
+              Fale conosco no WhatsApp
+            </a>
+            <div className="flex w-full max-w-[500px] items-center justify-center p-4">
+              <Image
+                src="/images/patrocinadores.png"
+                alt="Patrocinadores"
+                width={1000}
+                height={320}
+                className="h-auto w-full max-w-[500px] object-contain"
+              />
+            </div>
+          </div>
+          <div className="w-full max-w-[520px] space-y-6 text-center">
+            <div className="space-y-1 text-lg font-semibold">
+              <p className="text-[color:var(--color-accent)]">30 e 31 OUTUBRO (14 às 19h)</p>
+              <p className="text-white/85">Quinta e Sexta</p>
+            </div>
+            <div className="space-y-2 text-base text-white/85">
+              <p>VITRINE de Soluções Urbanas Sustentáveis</p>
+              <p>ESPAÇO APRENDIZ para compartilhamentos</p>
+              <p>RODAS de diálogos em Soluções Urbanas Sustentáveis</p>
+            </div>
+            <div className="space-y-1 text-lg font-semibold">
+              <p className="text-[color:var(--color-accent)]">01 DE NOVEMBRO (14 às 18h)</p>
+              <p className="text-white/85">Sábado</p>
+            </div>
+            <div className="space-y-3 text-base text-white/85">
+              <p>Mesa Redonda 1: aproveitamento de resíduos e caminhos sustentáveis para construção civil</p>
+              <p>
+                Mesa Redonda 2: Soluções Baseadas na Natureza (SbN) e engajamento comunitário rumo ao urbanismo
+                sustentável
               </p>
             </div>
           </div>
-          <div className="spotlight relative overflow-hidden rounded-3xl bg-[color:var(--color-surface)]/80 p-8">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-[color:var(--color-primary-muted)]/55" />
-            <div className="relative space-y-4 text-sm text-[color:var(--color-muted)]">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[color:var(--color-accent)]">
-                Metas 2024–2031
-              </p>
-              <p>
-                Estruturamos nossas áreas administrativas, comerciais e operacionais para garantir excelência em logística, aquisições e gestão de parceiros estratégicos.
-              </p>
-              <p>
-                Atuamos em João Pessoa e região conectando tecnologia, sofisticação e acolhimento. A cada evento, produzimos indicadores ESG auditáveis e fortalecemos uma rede de fornecedores que partilham nossos valores.
-              </p>
-            </div>
-          </div>
-        </motion.div>
-        <div className="grid gap-6">
-          {values.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, delay: index * 0.08, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.4 }}
-              >
-                <Card className="h-full bg-[color:var(--color-surface)]/90">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[color:var(--color-primary-muted)]">
-                    <Icon className="h-6 w-6 text-[color:var(--color-accent)]" strokeWidth={1.8} />
-                  </div>
-                  <h3 className="font-heading text-lg text-[color:var(--color-foreground)]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm text-[color:var(--color-muted)]">{item.description}</p>
-                </Card>
-              </motion.div>
-            );
-          })}
         </div>
+      </motion.div>
       </div>
     </section>
   );
