@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import { Button } from "./Button";
 
 const links = [
@@ -16,6 +17,7 @@ const links = [
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handler = () => {
@@ -26,6 +28,30 @@ export function Navbar() {
     window.addEventListener("scroll", handler);
     return () => window.removeEventListener("scroll", handler);
   }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const { style } = document.body;
+    const previousOverflow = style.overflow;
+    style.overflow = isMenuOpen ? "hidden" : previousOverflow;
+
+    return () => {
+      style.overflow = previousOverflow;
+    };
+  }, [isMenuOpen]);
+
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <motion.header
@@ -77,11 +103,57 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <div className="hidden md:block">
             <Button href="#contato" variant="secondary" className="text-xs uppercase tracking-[0.18em]">
-              Solicitar orçamento
+              Entre em contato
             </Button>
           </div>
+          <button
+            type="button"
+            onClick={toggleMenu}
+            aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={isMenuOpen}
+            className="flex h-11 w-11 items-center justify-center rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)]/90 text-[color:var(--color-foreground)] transition hover:border-[color:var(--color-accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-background)] lg:hidden"
+          >
+            {isMenuOpen ? <X className="h-5 w-5" aria-hidden /> : <Menu className="h-5 w-5" aria-hidden />}
+          </button>
         </div>
       </div>
+      <AnimatePresence>
+        {isMenuOpen ? (
+          <motion.div
+            key="mobile-menu"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="absolute left-0 right-0 top-full px-4 pb-4 pt-2 lg:hidden"
+          >
+            <div className="container-section rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)]/95 p-4 shadow-emerald backdrop-blur">
+              <nav className="flex flex-col gap-2">
+                {links.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={closeMenu}
+                    className="rounded-xl px-4 py-3 text-sm font-semibold text-[color:var(--color-muted)] transition hover:bg-[color:var(--color-primary-muted)]/35 hover:text-[color:var(--color-foreground)]"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </nav>
+              <div className="mt-4">
+                <Button
+                  href="#contato"
+                  variant="secondary"
+                  className="w-full justify-center text-xs uppercase tracking-[0.24em]"
+                  onClick={closeMenu}
+                >
+                  Entre em contato
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </motion.header>
   );
 }

@@ -43,7 +43,7 @@ export function Hero() {
           </p>
           {/* <div className="flex flex-col gap-4 sm:flex-row">
             <Button href="#contato" iconPosition="right">
-              Solicitar orçamento
+              Entre em contato
             </Button>
             <Button
               href="#conheca"

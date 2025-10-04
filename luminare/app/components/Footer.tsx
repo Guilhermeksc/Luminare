@@ -38,7 +38,7 @@ export function Footer() {
             </h3>
           </div>
           <Button href="#contato" variant="primary" className="text-xs uppercase tracking-[0.22em]">
-            Solicitar orçamento
+            Entre em contato
           </Button>
         </div>
         <div className="fade-divider" aria-hidden />
