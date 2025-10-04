@@ -111,6 +111,48 @@ img {
   z-index: -1;
 }
 
+.shimmer-border {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 9999px;
+  isolation: isolate;
+}
+
+.shimmer-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(120deg, rgba(244, 241, 232, 0.35), rgba(208, 174, 72, 0.85), rgba(244, 241, 232, 0.35));
+  background-size: 200% 200%;
+  animation: shimmer-border 3s linear infinite;
+  z-index: -2;
+}
+
+.shimmer-border::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: inherit;
+  background: rgba(4, 31, 22, 0.68);
+  transition: background 0.3s ease;
+  z-index: -1;
+}
+
+.shimmer-border:hover::after {
+  background: rgba(5, 76, 54, 0.75);
+}
+
+@keyframes shimmer-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

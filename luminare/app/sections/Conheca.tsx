@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Gem, Handshake, Leaf, MessageCircle, Music, Sparkles, Users, Waves } from "lucide-react";
+import { Gem, Handshake, Leaf, Music, Sparkles, Users, Waves } from "lucide-react";
 import { SectionHeading } from "../components/SectionHeading";
 import { Card } from "../components/Card";
 import { Dancing_Script } from "next/font/google";
@@ -28,7 +28,7 @@ export function Conheca() {
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 rounded-[32px] p-10 text-white">
           <div className="flex w-full items-center justify-center">
             <Image
-              src="/images/dia_verde.png"
+              src="/images/dia_verde.svg"
               alt="Dia Verde"
               width={500}
               height={500}
@@ -50,10 +50,10 @@ export function Conheca() {
             </div>
             <p className="text-sm text-white/80">Local: Espaço Cultural</p>
             <a
-              href="https://forms.gle/mbA7quzaF9xysJw88"
+              href="https://forms.gle/XKpYLtjiqjHvzFcx9"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-2 text-sm font-semibold uppercase tracking-[0.28em] text-white transition hover:border-white/60"
+              className="shimmer-border inline-flex items-center justify-center rounded-full px-6 py-2 text-sm font-semibold uppercase tracking-[0.28em] text-white transition duration-300 hover:shadow-[0_0_24px_rgba(208,174,72,0.35)]"
             >
               Inscreva-se aqui
             </a>
@@ -61,9 +61,15 @@ export function Conheca() {
               href="https://wa.me/5583999080130"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-2 text-sm font-semibold uppercase tracking-[0.28em] text-white transition hover:border-white/60"
+              className="inline-flex items-center justify-center gap-3 rounded-full border border-white/30 px-6 py-2 text-sm font-semibold uppercase tracking-[0.28em] text-white transition hover:border-white/60"
             >
-              <MessageCircle className="mr-3 h-4 w-4" aria-hidden="true" />
+              <Image
+                src="/images/whatsapp.svg"
+                alt="WhatsApp"
+                width={18}
+                height={18}
+                className="h-4 w-4"
+              />
               Fale conosco no WhatsApp
             </a>
             <div className="flex w-full max-w-[500px] items-center justify-center p-4">

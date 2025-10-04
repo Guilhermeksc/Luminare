@@ -14,7 +14,7 @@ const socialLinks = [
   },
   {
     label: "WhatsApp",
-    href: "https://wa.me/5561999999999", // coloque o número real
+    href: "https://wa.me/5583999080130", // coloque o número real
     icon: MessageCircle,
   },
   {
